@@ -1,3 +1,12 @@
 <div ng-controller='StudentController'>
   <h1>We made it!</h1>
+  <div ng-init='init()'></div>
+  <div ng-repeat='student in students'>
+    <div>Name: {{student.name}}</div>
+    <div>Picture: {{student.picture}}</div>
+    <div>Age: {{student.age}}</div>
+    <div>Likes: {{student.likes}}</div>
+    <div>Dislikes: {{student.dislikes}}</div>
+    <div>Blurb: {{student.blurb}}</div>
+  </div>
 </div>
