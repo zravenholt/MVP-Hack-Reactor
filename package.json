@@ -1,0 +1,25 @@
+{
+  "name": "mvp-hack-reactor",
+  "version": "1.0.0",
+  "description": "MVP project completed over two days for Hack Reactor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zravenholt/MVP-Hack-Reactor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zravenholt/MVP-Hack-Reactor/issues"
+  },
+  "homepage": "https://github.com/zravenholt/MVP-Hack-Reactor#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongoose": "^4.8.6",
+    "nodemon": "^1.11.0"
+  }
+}
