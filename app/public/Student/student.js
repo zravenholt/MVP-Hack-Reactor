@@ -13,6 +13,10 @@ angular.module('app.student', [])
     }
 
     $scope.searchStudents = function (name) {
+      if (name.length === 0) {
+        $scope.searchShow = false;
+        return;
+      }
       $scope.students.forEach(function (student) {
         console.log(student.name)
         if (student.name === name) {

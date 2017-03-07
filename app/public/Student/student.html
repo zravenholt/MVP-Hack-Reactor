@@ -6,7 +6,7 @@
     <button ng-click='searchStudents(currentStudent)'>Select a student to view</button>
   </form>
 
-  <div>Current Student: {{selectedStudent.name}}
+  <div ng-show='searchShow'>Current Student: {{selectedStudent.name}}
     <div ng-repeat='selected in students | filter: {name: selectedStudent.name}' ng-show='searchShow'>
       <div>Their Available Partners: {{selected.availableStudents.join(', ')}}</div>
       <div>Their Past Partners: {{selected.pastStudents.join(', ')}}</div>
@@ -16,11 +16,11 @@
     <div ng-repeat='student in students'>
       <div>Name: {{student.name}}</div>
       <img src={{student.picture}}></img>
-  <!--     <div>Age: {{student.age}}</div>
+      <div>Age: {{student.age}}</div>
       <div>Likes: {{student.likes}}</div>
       <div>Dislikes: {{student.dislikes}}</div>
       <div>Blurb: {{student.blurb}}</div>
-      <div>Available: {{student.availableStudents.join(', ')}}</div>
+<!--       <div>Available: {{student.availableStudents.join(', ')}}</div>
       <div>Past: {{student.pastStudents.join(', ')}}</div> -->
     </div>
   </div>

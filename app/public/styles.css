@@ -2,4 +2,8 @@ body {
   font-family: Helvetica;
 }
 
-.allStudents
+.allStudents {
+  border-radius: 10px;
+  border-width: 10px;
+  font-family: Arial;
+}
