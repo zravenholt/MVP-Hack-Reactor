@@ -24,6 +24,8 @@ mongoose.connect('mongodb://localhost/students')
 
 app.use(express.static(__dirname + '/public'));
 
+app.use(bodyParser.json());
+
 app.get('/api/students', function (request, response) {
   student.find({}, function (err, res) {
     if (err) {
@@ -32,6 +34,12 @@ app.get('/api/students', function (request, response) {
       response.send(res)
     }
   })
+});
+
+app.post('/api/students', function (request, response) {
+  console.log('in server.js with request: ', request.body)
+  var newStudent = new student(request.body);
+  newStudent.save();
 })
 
 app.listen(port, function () {

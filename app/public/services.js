@@ -15,6 +15,17 @@ angular.module('app.services', [])
     this.addStudent = function (student) {
       //takes student obj? and adds them to database,
       //may have to add them to each array
+      return $http({
+        method: 'POST',
+        url: '/api/students',
+        data: student
+      }).then(function(err, response){
+        if (err) {
+          console.log('error posting in services.js: ', err)
+        } else {
+          console.log('successful post!')
+        }
+      })
     }
 
   });
