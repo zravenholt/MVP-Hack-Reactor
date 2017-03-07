@@ -48,6 +48,12 @@ app.put('/api/students', function (request, response) {
   student.findOne(
     { name: request.body.name },
     function (err, user) {
+      user.picture = request.body.picture;
+      user.age = request.body.age;
+      user.likes = request.body.likes;
+      user.dislikes = request.body.dislikes;
+      user.blurb = request.body.blurb;
+      user.pastStudents = request.body.pastStudents;
       user.availableStudents = request.body.availableStudents;
       user.save(function (err) {
         if (err) {

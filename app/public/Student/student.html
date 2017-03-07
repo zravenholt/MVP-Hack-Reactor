@@ -13,14 +13,15 @@
     </div>   
   </div>
   <div class='allStudents'>All Students:
-    <div ng-repeat='student in students' class='repStudent'>
+    <div ng-repeat='student in students' class='repStudent' ng-click='partner(student.name, selectedStudent.name)'>
       <div>Name: {{student.name}}</div>
-      <img src={{student.picture}} class='image' ng-click='partner(student.name, selectedStudent.name)'></img>
+      <img src={{student.picture}} class='image' ></img>
       <div>Age: {{student.age}}</div>
       <div>Likes: {{student.likes}}</div>
       <div>Dislikes: {{student.dislikes}}</div>
       <div>Blurb: {{student.blurb}}</div>
     </div>
   </div>
+  <button ng-click='clearPartners()' class='director'>CLEAR ALL PARTNERS (MVP ONLY)</button>
 </div>
 
