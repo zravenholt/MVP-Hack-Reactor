@@ -3,6 +3,18 @@ body {
   background-color: #edf3f4;
 }
 
+.navigator {
+  background-color: #9ca2a3;
+  padding: 10px;
+}
+
+.director {
+  background-color: #f4f9f9;
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 2px;
+}
+
 .new {
   font-family: monospace;
   color: #9e0032;
@@ -35,3 +47,4 @@ body {
 .form {
   margin: 15px;
 }
+
