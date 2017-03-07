@@ -1,12 +1,37 @@
 body {
   font-family: Helvetica;
-  background-color: #d4ebf7;
+  background-color: #edf3f4;
 }
 
 .new {
-  font-family: Arial;
+  font-family: monospace;
+  color: #9e0032;
 }
 
 .buddy {
-  font-family: Times;
+  font-family: monospace;
+}
+
+.allStudents {
+  background-color: #95F2E0;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.repStudent {
+  background-color: #C1DAF2;
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.image {
+  width: 100%;
+  max-width: 200px;
+}
+
+.form {
+  margin: 15px;
 }

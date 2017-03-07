@@ -1,27 +1,25 @@
 <div ng-controller='StudentController'>
-  <h1>We made it!</h1>
+  <h1>Type your name into the search bar, then select a new partner!</h1>
   <div ng-init='init()'></div>
-  <form>
+  <form class='form'>
     <input ng-model='currentStudent'></input>
     <button ng-click='searchStudents(currentStudent)'>Select a student to view</button>
   </form>
 
-  <div ng-show='searchShow'>Current Student: {{selectedStudent.name}}
+  <div ng-show='searchShow' class='form'>Current Student: {{selectedStudent.name}}
     <div ng-repeat='selected in students | filter: {name: selectedStudent.name}' ng-show='searchShow'>
       <div>Their Available Partners: {{selected.availableStudents.join(', ')}}</div>
       <div>Their Past Partners: {{selected.pastStudents.join(', ')}}</div>
     </div>   
   </div>
   <div class='allStudents'>All Students:
-    <div ng-repeat='student in students'>
+    <div ng-repeat='student in students' class='repStudent'>
       <div>Name: {{student.name}}</div>
-      <img src={{student.picture}}></img>
+      <img src={{student.picture}} class='image'></img>
       <div>Age: {{student.age}}</div>
       <div>Likes: {{student.likes}}</div>
       <div>Dislikes: {{student.dislikes}}</div>
       <div>Blurb: {{student.blurb}}</div>
-<!--       <div>Available: {{student.availableStudents.join(', ')}}</div>
-      <div>Past: {{student.pastStudents.join(', ')}}</div> -->
     </div>
   </div>
 </div>
