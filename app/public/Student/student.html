@@ -15,7 +15,7 @@
   <div class='allStudents'>All Students:
     <div ng-repeat='student in students' class='repStudent'>
       <div>Name: {{student.name}}</div>
-      <img src={{student.picture}} class='image'></img>
+      <img src={{student.picture}} class='image' ng-click='partner(student.name, selectedStudent.name)'></img>
       <div>Age: {{student.age}}</div>
       <div>Likes: {{student.likes}}</div>
       <div>Dislikes: {{student.dislikes}}</div>

@@ -32,5 +32,30 @@ angular.module('app.student', [])
 
     $scope.getAll = Tasks.getAll;
 
+    $scope.partner = function (clickedStudent, selStudent) {
+      var selectStudent = {};
+      var clickStudent = {};
+      $scope.students.forEach(function (student) {
+        if (student.name === selStudent) {
+          student.pastStudents.push(clickedStudent)
+          for (var i = 0; i < student.availableStudents.length; i++) {
+            if (student.availableStudents[i] === clickedStudent) {
+              student.availableStudents.splice(i , 1);
+            }
+          }
+          $scope.selectedStudent = student;
+          selectStudent = student;
+        } else if (student.name === clickedStudent) {
+          student.pastStudents.push(selStudent);
+          for (var i = 0; i < student.availableStudents.length; i++) {
+            if (student.availableStudents[i] === selStudent) {
+              student.availableStudents.splice(i, 1);
+            }
+          }
+          clickStudent = student;
+        }
+      })
+    }
+
 
   })
