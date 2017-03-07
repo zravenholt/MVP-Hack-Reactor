@@ -35,9 +35,14 @@ angular.module('app.student', [])
     $scope.partner = function (clickedStudent, selStudent) {
       var selectStudent = {};
       var clickStudent = {};
+      if (clickedStudent === selStudent) {
+        return;
+      }
       $scope.students.forEach(function (student) {
         if (student.name === selStudent) {
-          student.pastStudents.push(clickedStudent)
+          if (student.pastStudents.indexOf(clickedStudent) === -1) {
+            student.pastStudents.push(clickedStudent);
+          }
           for (var i = 0; i < student.availableStudents.length; i++) {
             if (student.availableStudents[i] === clickedStudent) {
               student.availableStudents.splice(i , 1);
@@ -46,7 +51,9 @@ angular.module('app.student', [])
           $scope.selectedStudent = student;
           selectStudent = student;
         } else if (student.name === clickedStudent) {
-          student.pastStudents.push(selStudent);
+          if (student.pastStudents.indexOf(selStudent) === -1) {
+            student.pastStudents.push(selStudent);           
+          }
           for (var i = 0; i < student.availableStudents.length; i++) {
             if (student.availableStudents[i] === selStudent) {
               student.availableStudents.splice(i, 1);
@@ -54,7 +61,7 @@ angular.module('app.student', [])
           }
           clickStudent = student;
         }
-      })
+      });
     }
 
 
