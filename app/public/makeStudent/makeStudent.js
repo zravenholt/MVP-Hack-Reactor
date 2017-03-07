@@ -12,7 +12,25 @@ angular.module('app.makeStudent', [])
         availableStudents: []
       }
 
-      Tasks.addStudent(studentObj);
+      Tasks.getAll((res) => console.log('response: ', res))
+        .then(function (res) {
+          res.data.forEach(function (oldStudent) {
+            studentObj.availableStudents.push(oldStudent.name);
+            oldStudent.availableStudents.push(studentObj.name);
+          })
+          console.log('CONSOLE LOGGING available students: ', studentObj.availableStudents);
+          return {oldStudents: res.data, student: studentObj}       
+        }).then(function (studentsObj) {
+          console.log('IN FINAL THEN WITH: ', studentsObj)
+          Tasks.addStudent(studentsObj.student);  
+          return studentsObj;
+        }).then(function (studentsObj) {
+          console.log('OLD STUDENTS', studentsObj.oldStudents)
+          studentsObj.oldStudents.forEach(function (student) {
+            console.log(student)
+            Tasks.updateStudent(student);
+          })
+        });
 
     };
   })

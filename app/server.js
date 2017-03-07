@@ -37,9 +37,18 @@ app.get('/api/students', function (request, response) {
 });
 
 app.post('/api/students', function (request, response) {
-  console.log('in server.js with request: ', request.body)
   var newStudent = new student(request.body);
   newStudent.save();
+})
+
+app.put('/api/students', function (request, response) {
+  console.log('in update server.js: ', request.body)
+
+  //START HERE WITH makeSTUDENT.JS AND GETTING ALL PEOPLE TO GET NEW PERSON
+  // student.findOneAndUpdate(
+  //   { name: request.body.name },
+  //   {availableStudents: request.body.availableStudents}
+  // );
 })
 
 app.listen(port, function () {

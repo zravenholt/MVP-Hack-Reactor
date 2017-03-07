@@ -9,7 +9,7 @@ var StudentSchema = new Schema({
   dislikes: String,
   blurb: String,
   pastStudents: Array,
-  AvailableStudents: Array
+  availableStudents: Array
 });
 
 module.exports = mongoose.model('Student', StudentSchema)

@@ -28,4 +28,15 @@ angular.module('app.services', [])
       })
     }
 
+    this.updateStudent = function (obj) {
+      console.log('update student')
+      return $http({
+        method: 'PUT',
+        url: '/api/students',
+        data: obj
+      }).then(function (res) {
+        console.log('sending update request')
+      })
+    }
+
   });
