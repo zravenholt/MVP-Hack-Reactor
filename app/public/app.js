@@ -8,5 +8,7 @@ var app = angular.module('app', ['app.services', 'app.student', 'app.makeStudent
     }).when('/makeStudent', {
       templateUrl: 'makeStudent/makeStudent.html',
       controller: 'MakeStudentController'
+    }).otherwise({
+      redirectTo: '/students'
     })
   });

@@ -1,9 +1,12 @@
 body {
   font-family: Helvetica;
+  background-color: #d4ebf7;
 }
 
-.allStudents {
-  border-radius: 10px;
-  border-width: 10px;
+.new {
   font-family: Arial;
+}
+
+.buddy {
+  font-family: Times;
 }
