@@ -21,12 +21,11 @@ angular.module('app.makeStudent', [])
           console.log('CONSOLE LOGGING available students: ', studentObj.availableStudents);
           return {oldStudents: res.data, student: studentObj}       
         }).then(function (studentsObj) {
-          console.log('IN FINAL THEN WITH: ', studentsObj)
           Tasks.addStudent(studentsObj.student);  
-          return studentsObj;
-        }).then(function (studentsObj) {
-          console.log('OLD STUDENTS', studentsObj.oldStudents)
-          studentsObj.oldStudents.forEach(function (student) {
+          return studentsObj.oldStudents;
+        }).then(function (oldStudents) {
+          console.log('OLD STUDENTS', oldStudents)
+          oldStudents.forEach(function (student) {
             console.log(student)
             Tasks.updateStudent(student);
           })

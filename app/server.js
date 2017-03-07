@@ -45,10 +45,19 @@ app.put('/api/students', function (request, response) {
   console.log('in update server.js: ', request.body)
 
   //START HERE WITH makeSTUDENT.JS AND GETTING ALL PEOPLE TO GET NEW PERSON
-  // student.findOneAndUpdate(
-  //   { name: request.body.name },
-  //   {availableStudents: request.body.availableStudents}
-  // );
+  student.findOne(
+    { name: request.body.name },
+    function (err, user) {
+      user.availableStudents = request.body.availableStudents;
+      user.save(function (err) {
+        if (err) {
+          console.log('ERROR in server.js FIND ONE AND UPDATE: ', err);
+        } else {
+          console.log('SUCCESSFUL POST')
+        }
+      });
+    }
+  );
 })
 
 app.listen(port, function () {
