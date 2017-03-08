@@ -8,6 +8,7 @@
 
   <div ng-show='searchShow' class='form'>Current Student: {{selectedStudent.name}}
     <div ng-repeat='selected in students | filter: {name: selectedStudent.name}' ng-show='searchShow'>
+      <img src={{selectedStudent.picture}} class='image'></img>
       <div>Their Available Partners: {{selected.availableStudents.join(', ')}}</div>
       <div>Their Past Partners: {{selected.pastStudents.join(', ')}}</div>
     </div>   
